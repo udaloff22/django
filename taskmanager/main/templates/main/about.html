@@ -1,25 +1,10 @@
-<!doctype html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>THis Is Motherfucking About Page</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-</head>
-<body>
-  <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-    <p class="h5 my-0 me-md-auto fw-normal">Dog Company</p>
-    <nav class="my-2 my-md-0 me-md-3">
-      <a class="p-2 text-dark" href="#">kurs na skillbox</a>
-      <a class="p-2 text-dark" href="#">pogulat' s maslovoi</a>
-      <a class="p-2 text-dark" href="#">shim pidor</a>
-      <a class="p-2 text-dark" href="#">poigrat' na minere</a>
-    </nav>
-    <a class="btn btn-outline-primary" href="#">zaletet v ds</a>
-  </header>
+{% extends 'main/base.html' %}
+
+{% block title %}
+  THis Is Tha Motherfucking About Page
+{% endblock %}
+
+{% block content %}
   <h1>About Me?</h1>
   <h1>Imma dawg till i die</h1>
-</body>
-</html>
+{% endblock %}
