@@ -12,7 +12,7 @@ def about(request):
 def pes(request):
     return render(request, 'main/pes.html')
 
-def dogg(request):
+def dog(request):
     return render(request, 'main/dog.html')
 
 def sobaka(request):
