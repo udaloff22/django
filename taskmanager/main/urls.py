@@ -8,6 +8,5 @@ urlpatterns = [
     path('pidor', views.pidor, name='pidor'),
     path('dog', views.dog, name='dog'),
     path('sobaka', views.sobaka, name='sobaka'),
-    
-
+    path('create', views.create, name='create')
 ]

@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Task
+from .forms import TaskForm
 
 # Create your views here.
 
@@ -25,3 +26,15 @@ def sobaka(request):
 
 def pidor(request):
     return render(request, 'main/pidor.html')
+
+def create(request):
+    if request.method == 'post':
+        form = TaskForm(request.post)
+        if form.is_valid():
+            form.save()
+            redirect('main')
+
+
+    form = TaskForm
+    context = {'form' : form}
+    return render(request, 'main/create.html', context)

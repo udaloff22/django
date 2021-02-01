@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+  THis Is Tha Motherfucking About Page
+{% endblock %}
+
+{% block content %}
+  <h2>Zdes mojno napisat svoyu huetu</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.title }}<br>
+    {{ form.text }}<br>
+
+  <button type="button" class="btn btn-outline-success">post</button>
+  </form>
+{% endblock %}
