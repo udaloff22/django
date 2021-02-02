@@ -28,13 +28,12 @@ def pidor(request):
     return render(request, 'main/pidor.html')
 
 def create(request):
-    if request.method == 'post':
-        form = TaskForm(request.post)
-        if form.is_valid():
-            form.save()
-            redirect('main')
-
+    if request.method == 'POST':
+        form = TaskForm(request.POST)
+        form.save()
+        return redirect('main')
 
     form = TaskForm
+
     context = {'form' : form}
     return render(request, 'main/create.html', context)
