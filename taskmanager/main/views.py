@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Task
-from .forms import TaskForm
+
+from .services import note
 
 # Create your views here.
 
@@ -28,12 +29,4 @@ def pidor(request):
     return render(request, 'main/pidor.html')
 
 def create(request):
-    if request.method == 'POST':
-        form = TaskForm(request.POST)
-        form.save()
-        return redirect('main')
-
-    form = TaskForm
-
-    context = {'form' : form}
-    return render(request, 'main/create.html', context)
+    return render(request, 'main/create.html', note(request))
