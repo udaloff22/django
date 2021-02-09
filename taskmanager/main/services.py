@@ -15,7 +15,6 @@ def note(request):
 
     return render(request, 'main/create.html', context )
 
-
 def main_page(request): # вывод заметок на главной странице
 
     tasks = Task.objects.order_by('id')

@@ -23,5 +23,3 @@ def pidor(request):
 
 def create(request):
     return note(request)
-
-# сделать так, чтобы после добавления заметки был норм редирект
