@@ -1,17 +1,10 @@
-from django.shortcuts import render, redirect
-from .models import Task
-
-from .services import note
+from django.shortcuts import render
+from .services import note, main_page
 
 # Create your views here.
 
 def index(request):
-    tasks = Task.objects.order_by('id')
-    return render(request, 'main/index.html',
-        {
-            'title' : 'Tha Main Page!',
-            'tasks' : tasks,
-        })
+    return render(request, 'main/index.html', main_page(request))
 
 def about(request):
     return render(request, 'main/about.html')
@@ -29,4 +22,6 @@ def pidor(request):
     return render(request, 'main/pidor.html')
 
 def create(request):
-    return render(request, 'main/create.html', note(request))
+    return note(request)
+
+# сделать так, чтобы после добавления заметки был норм редирект
